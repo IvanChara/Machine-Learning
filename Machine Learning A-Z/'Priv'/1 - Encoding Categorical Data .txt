@@ -1,0 +1,9 @@
+#encoding categorical data
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_x = LabelEncoder() 
+x[:, 0] = labelencoder_x.fit_transform(x[:, 0])
+onehotencoder = OneHotEncoder(categorical_features = [0])
+x = onehotencoder.fit_transform(x).toarray()
+
+labelencoder_y = LabelEncoder() 
+y = labelencoder_x.fit_transform(y)

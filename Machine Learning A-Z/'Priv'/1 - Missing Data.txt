@@ -1,0 +1,6 @@
+#Missing data
+from sklearn.preprocessing import Imputer
+#ctrl + I para poder ver info de la clase y, por ejemplo, ver los parametros
+imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
+imputer = imputer.fit(x[:, 1:3]) #la columna 1 y 2 que son las que faltan datos 
+x[:, 1:3] = imputer.transform(x[:, 1:3])
